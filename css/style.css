@@ -1,34 +1,34 @@
 /* Montserrat Regular-400 */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/montserrat-v15-latin_cyrillic-regular.woff') format('woff'),
-    url('../fonts/montserrat-v15-latin_cyrillic-regular.woff2') format('woff2');
+  src: url("../fonts/montserrat-v15-latin_cyrillic-regular.woff") format("woff"),
+    url("../fonts/montserrat-v15-latin_cyrillic-regular.woff2") format("woff2");
 }
 /* Montserrat Medium 600 */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/montserrat-v15-latin_cyrillic-600.woff') format('woff'),
-    url('../fonts/montserrat-v15-latin_cyrillic-600.woff2') format('woff2');
+  src: url("../fonts/montserrat-v15-latin_cyrillic-600.woff") format("woff"),
+    url("../fonts/montserrat-v15-latin_cyrillic-600.woff2") format("woff2");
 }
 /*Montserrat Bold-700 */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/montserrat-v15-latin_cyrillic-700.woff') format('woff'),
-    url('../fonts/montserrat-v15-latin_cyrillic-700.woff2') format('woff2');
+  src: url("../fonts/montserrat-v15-latin_cyrillic-700.woff") format("woff"),
+    url("../fonts/montserrat-v15-latin_cyrillic-700.woff2") format("woff2");
 }
 /* Montserrat Bold-800 */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
-  src: url('../fonts/montserrat-v15-latin_cyrillic-800.woff') format('woff'),
-    url('../fonts/montserrat-v15-latin_cyrillic-800.woff2') format('woff2');
+  src: url("../fonts/montserrat-v15-latin_cyrillic-800.woff") format("woff"),
+    url("../fonts/montserrat-v15-latin_cyrillic-800.woff2") format("woff2");
 }
 
 :root {
@@ -55,7 +55,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: var(--color-gray);
@@ -292,7 +292,7 @@ img {
 
 .burger__line::before,
 .burger__line::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   transition: transform var(--transition), width var(--transition);
@@ -637,12 +637,11 @@ img {
 .footer__nav,
 .footer__request,
 .footer__text {
-  flex-grow: 0;
   flex-basis: calc((100% - 40px) / 3);
 }
 
 .footer__nav {
-  margin-right: 40px;
+  flex-basis: 35%;
 }
 
 .footer__logo {
@@ -718,21 +717,29 @@ img {
 }
 
 .footer__request {
-  margin-right: 40px;
+  min-width: 576px;
+  max-width: 576px;
 }
 
-.footer__form {
-  max-width: 570px;
+.footer__text {
+  padding: 64px 0 0 64px;
+}
+
+.footer__desc {
+  color: var(--color-light-gray);
+}
+
+.form {
   display: flex;
   flex-direction: column;
 }
 
-.footer__heading {
+.form__heading {
   margin-bottom: 18px;
   color: var(--color-light-gray);
 }
 
-.footer__request-input {
+.form__input {
   margin-bottom: 27px;
   padding: 14px 24px;
   width: 100%;
@@ -743,53 +750,62 @@ img {
   background-color: var(--color-gray41);
 }
 
-.footer__request-textarea {
+.form__input--textarea {
   height: 150px;
   resize: none;
 }
 
-.input__btn {
+.form__send {
+  display: flex;
+  align-items: center;
+}
+
+.form__btn {
   margin-right: 20px;
   padding: 20px 52px;
 }
 
-.check {
-  position: relative;
-  padding-left: 18px;
-  cursor: pointer;
-  line-height: 32px;
+.checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkbox__input + label {
+  display: inline-flex;
+  align-items: baseline;
   font-size: 16px;
+  line-height: 24px;
   color: var(--color-light-gray);
+  user-select: none;
+  cursor: pointer;
 }
 
-.check__input {
-  position: absolute;
-  appearance: none;
-}
-
-.check__box {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  margin-left: -4px;
+.checkbox__input + label::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  flex-grow: 0;
   width: 14px;
   height: 14px;
   border: 1px solid var(--color-light-gray);
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  transform: translateY(2px);
 }
 
-.check__input:checked + .check__box {
+.checkbox__input:checked + label::before {
+  border-color: var(--color-body);
   background-image: url(../img/icon/checkbox.svg);
   background-repeat: no-repeat;
   background-position: 0 -1px;
   background-size: contain;
 }
 
-.footer__text {
-  padding: 64px 0 0 64px;
-}
-
-.footer__desc {
-  color: var(--color-light-gray);
+.checkbox__input:focus + label::before {
+  box-shadow: 0 0 0 1px var(--color-body);
 }
 
 /* Адаптив */
@@ -817,11 +833,7 @@ img {
     flex-wrap: wrap;
   }
   .footer__nav {
-    flex: 30%;
-  }
-  .footer__request {
-    flex: 55%;
-    margin-right: 0;
+    flex-basis: 41%;
   }
   .footer__text {
     flex: 1 1 100%;
@@ -888,6 +900,17 @@ img {
   }
   .tabs__desc {
     margin-bottom: 32px;
+  }
+  .footer__request {
+    max-width: 540px;
+    min-width: 540px;
+  }
+  .form__btn {
+    padding: 20px 0px;
+    flex: 1 0 44.5%;
+  }
+  .form__checkbox {
+    flex: 1 0 52%;
   }
 }
 
