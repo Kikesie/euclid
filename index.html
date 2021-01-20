@@ -11,9 +11,8 @@
 <body>
   <header class="header">
     <div class="container header__container">
-      <!-- обработчик onclick добавлен для наглядности переключению (позже удалить) -->
-      <button class="header__burger" onclick="classList.toggle('active')">
-        <span class="burger__line"></span>
+      <button class="header__burger">
+        <span class="header__burger-line"></span>
       </button>
       <a class="header__logo" href="#">
         <img src="./img/icon/logo.png" alt="">
@@ -60,7 +59,6 @@
     <div class="container">
       <ul class="preview__slider">
         <li class="preview__slide">
-          <img class="preview__img" src="./img/content/slide.jpg" alt="">
           <div class="preview__text">
             <h1 class="preview__heading">
               Проектные решения любой сложности
@@ -96,20 +94,19 @@
       <div class="about__content">
         <div class="about__banner">
           <div class="about__more">
-            <p class="more__description">
+            <p class="about__more-description">
               Принимая во внимание показатели успешности, перспективное планирование способствует
               подготовке и реализации новых принципов.
             </p>
-            <button class="more__button btn-outline-primary">Подробнее</button>
+            <a class="about__more-button btn-outline-primary" href="#">Подробнее</a>
           </div>
         </div>
         <ul class="about__advantages-list">
           <li class="about__advantages-item about__advantages-item--one">
-            <div class="about__advantages-image"></div>
             <div class="about__advantages-text">
-              <h3 class="about__advantages-heading subtitle">
+              <span class="about__advantages-heading subtitle">
                 Консультация с широким активом
-              </h3>
+              </span>
               <p class="about__advantages-desc text">
                 А также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для как
                 самодостаточных, так и внешне зависимых концептуальных решений.
@@ -117,11 +114,10 @@
             </div>
           </li>
           <li class="about__advantages-item about__advantages-item--two">
-            <div class="about__advantages-image"></div>
             <div class="about__advantages-text">
-              <h3 class="about__advantages-heading subtitle">
+              <span class="about__advantages-heading subtitle">
                 В своём стремлении повысить
-              </h3>
+              </span>
               <p class="about__advantages-desc text">
                 Качество жизни, они забывают, что сплочённость команды профессионалов представляет собой
                 интересный эксперимент проверки прогресса профессионального сообщества.
@@ -141,16 +137,24 @@
       <div class="stages__tabs tabs">
         <ul class="tabs__list">
           <li class="tabs__item tabs__item--active">
-            1 шаг
+            <button class="tabs__item-btn">
+              1 шаг
+            </button>
           </li>
           <li class="tabs__item">
-            2 шаг
+            <button class="tabs__item-btn">
+              2 шаг
+            </button>
           </li>
           <li class="tabs__item">
-            3 шаг
+            <button class="tabs__item-btn">
+              3 шаг
+            </button>
           </li>
           <li class="tabs__item">
-            4 шаг
+            <button class="tabs__item-btn">
+              4 шаг
+            </button>
           </li>
         </ul>
         <ul class="tabs__content-list">
@@ -197,86 +201,36 @@
       </h2>
       <ul class="faq__list">
         <li class="faq__item">
-          <button class="faq__btn">
-            <h3 class="faq__heading subtitle">
-              Из чего формируется конечная стоимость проекта?
-            </h3>
-            <div class="faq__icon">
-              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="25.0987" cy="25" rx="24.9013" ry="25" fill="#ECECEC" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M25.1556 24.0571L25.1556 9L26.0378 9L26.0378 24.0571L33.9471 24.0571L41.0355 24.0571L41.0355 24.9429L26.0378 24.9429L26.0378 40L25.1556 40L25.1556 24.9429L10.1579 24.9429L10.1579 24.0571L25.1556 24.0571Z"
-                  fill="#666666" />
-              </svg>
-
-            </div>
-          </button>
+          <h3 class="faq__heading subtitle">
+            Из чего формируется конечная стоимость проекта?
+          </h3>
+          <span class="faq__icon"></span>
         </li>
         <li class="faq__item">
-          <button class="faq__btn">
-            <h3 class="faq__heading subtitle">
-              У меня есть свой проект. Сможем ли мы его доработать <span class="slash-gray">/</span>
-              реализовать?
-            </h3>
-            <div class="faq__icon">
-              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="25.0987" cy="25" rx="24.9013" ry="25" fill="#ECECEC" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M25.1556 24.0571L25.1556 9L26.0378 9L26.0378 24.0571L33.9471 24.0571L41.0355 24.0571L41.0355 24.9429L26.0378 24.9429L26.0378 40L25.1556 40L25.1556 24.9429L10.1579 24.9429L10.1579 24.0571L25.1556 24.0571Z"
-                  fill="#666666" />
-              </svg>
-
-            </div>
-          </button>
+          <h3 class="faq__heading subtitle">
+            У меня есть свой проект. Сможем ли мы его доработать <span class="slash-gray">/</span>
+            реализовать?
+          </h3>
+          <span class="faq__icon"></span>
         </li>
         <li class="faq__item">
-          <button class="faq__btn">
-            <h3 class="faq__heading subtitle">
-              Я выбираю между разными компаниями. В чём ваше отличие?
-            </h3>
-            <div class="faq__icon">
-              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="25.0987" cy="25" rx="24.9013" ry="25" fill="#ECECEC" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M25.1556 24.0571L25.1556 9L26.0378 9L26.0378 24.0571L33.9471 24.0571L41.0355 24.0571L41.0355 24.9429L26.0378 24.9429L26.0378 40L25.1556 40L25.1556 24.9429L10.1579 24.9429L10.1579 24.0571L25.1556 24.0571Z"
-                  fill="#666666" />
-              </svg>
-
-            </div>
-          </button>
+          <h3 class="faq__heading subtitle">
+            Я выбираю между разными компаниями. В чём ваше отличие?
+          </h3>
+          <span class="faq__icon"></span>
         </li>
         <li class="faq__item">
-          <button class="faq__btn">
-            <h3 class="faq__heading subtitle">
-              Могу ли я делегировать вам работу <span class="slash-gray">/</span> согласование с
-              подрядчиком <span class="slash-gray">/</span> организацией?
-            </h3>
-            <div class="faq__icon">
-              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="25.0987" cy="25" rx="24.9013" ry="25" fill="#ECECEC" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M25.1556 24.0571L25.1556 9L26.0378 9L26.0378 24.0571L33.9471 24.0571L41.0355 24.0571L41.0355 24.9429L26.0378 24.9429L26.0378 40L25.1556 40L25.1556 24.9429L10.1579 24.9429L10.1579 24.0571L25.1556 24.0571Z"
-                  fill="#666666" />
-              </svg>
-
-            </div>
-          </button>
+          <h3 class="faq__heading subtitle">
+            Могу ли я делегировать вам работу <span class="slash-gray">/</span> согласование с
+            подрядчиком <span class="slash-gray">/</span> организацией?
+          </h3>
+          <span class="faq__icon"></span>
         </li>
         <li class="faq__item">
-          <button class="faq__btn">
-            <h3 class="faq__heading subtitle">
-              Могу ли я вернуть деньги на каком-либо из этапов работ?
-            </h3>
-            <div class="faq__icon">
-              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="25.0987" cy="25" rx="24.9013" ry="25" fill="#ECECEC" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M25.1556 24.0571L25.1556 9L26.0378 9L26.0378 24.0571L33.9471 24.0571L41.0355 24.0571L41.0355 24.9429L26.0378 24.9429L26.0378 40L25.1556 40L25.1556 24.9429L10.1579 24.9429L10.1579 24.0571L25.1556 24.0571Z"
-                  fill="#666666" />
-              </svg>
-
-            </div>
-          </button>
+          <h3 class="faq__heading subtitle">
+            Могу ли я вернуть деньги на каком-либо из этапов работ?
+          </h3>
+          <span class="faq__icon"></span>
         </li>
       </ul>
     </div>
@@ -289,55 +243,55 @@
           <a class="footer__logo" href="#">
             <img src="./img/icon/footer-logo.png" alt="">
           </a>
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a class="nav__link" href="#">
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">
                 О нас
               </a>
             </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">
                 Проекты
               </a>
             </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">
                 Отзывы
               </a>
             </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">
                 Договор оферты
               </a>
             </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">
                 Договор подряда
               </a>
             </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">
                 Конфиденциальность
               </a>
             </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">
                 Партнерское соглашение
               </a>
             </li>
           </ul>
 
-          <ul class="socials__list">
-            <li class="socials__item">
-              <a class="socials__link socials__link-fb" href="#">
+          <ul class="footer__socials-list">
+            <li class="footer__socials-item">
+              <a class="footer__socials-link footer__socials-link-fb" href="#">
               </a>
             </li>
-            <li class="socials__item">
-              <a class="socials__link socials__link-vk" href="#">
+            <li class="footer__socials-item">
+              <a class="footer__socials-link footer__socials-link-vk" href="#">
               </a>
             </li>
-            <li class="socials__item">
-              <a class="socials__link socials__link-inst" href="#">
+            <li class="footer__socials-item">
+              <a class="footer__socials-link footer__socials-link-inst" href="#">
               </a>
             </li>
           </ul>
