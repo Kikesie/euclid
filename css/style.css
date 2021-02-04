@@ -395,7 +395,7 @@ img {
   align-items: center;
   min-height: 620px;
   padding: 80px;
-  background-image: url(/img/content/slide.jpg);
+  background-image: url(../img/content/slide.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
