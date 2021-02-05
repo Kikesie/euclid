@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Евклид</title>
 </head>
@@ -57,22 +58,28 @@
 
   <section class="preview">
     <div class="container">
-      <ul class="preview__slider">
-        <li class="preview__slide">
-          <div class="preview__text">
-            <h1 class="preview__heading">
-              Проектные решения любой сложности
-            </h1>
-            <p class="preview__desc">
-              Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются
-              уделом проектантов
-            </p>
-            <button class="preview__button btn-primary-lg">
-              Заказать расчет
-            </button>
-          </div>
-        </li>
-      </ul>
+      <div class="preview__swiper swiper-container">
+        <ul class="preview__slider swiper-wrapper">
+          <li class="preview__slide preview__slide--1 swiper-slide"></li>
+          <li class="preview__slide preview__slide--2 swiper-slide"></li>
+          <li class="preview__slide preview__slide--3 swiper-slide"></li>
+        </ul>
+        <div class="preview__text">
+          <h1 class="preview__heading">
+            Проектные решения любой сложности
+          </h1>
+          <p class="preview__desc">
+            Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются
+            уделом проектантов
+          </p>
+          <button class="preview__button btn-primary-lg">
+            Заказать расчет
+          </button>
+        </div>
+        <!-- Add Pagination -->
+        <div class="preview__pagination swiper-pagination"></div>
+
+      </div>
     </div>
   </section>
 
@@ -310,6 +317,7 @@
       </div>
     </div>
   </footer>
+  <script src="./js/swiper-bundle.min.js" defer></script>
+  <script src="./js/preview-slider.js" defer></script>
 </body>
-
 </html>
