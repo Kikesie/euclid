@@ -57,6 +57,7 @@
 }
 
 body {
+  min-width: 320px;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -853,6 +854,12 @@ img {
 }
 
 /* Адаптив */
+@media (max-width: 1500px) {
+  .footer__text {
+    display: none;
+  }
+}
+
 
 @media (max-width: 1370px) {
   .about__description {
@@ -879,9 +886,6 @@ img {
   }
   .footer__nav {
     flex-basis: 41%;
-  }
-  .footer__text {
-    display: none;
   }
 }
 
@@ -1229,7 +1233,6 @@ img {
   }
   .tabs_content-image {
     margin-bottom: 8px;
-
   }
   .tabs__heading {
     margin-top: 5px;
@@ -1319,3 +1322,10 @@ img {
   }
 }
 
+@media (max-width: 500px) {
+  .tabs_content-image {
+    margin-bottom: 8px;
+    max-height: 159px;
+    max-width: 249px;
+  }
+}
